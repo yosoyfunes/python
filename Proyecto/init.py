@@ -29,7 +29,7 @@ def mostrar_menu(opciones, funcEsValido):
     else:
         mostrar_menu(opciones, funcionvalida)
 
-def funcionEsVAlida (opcion_elegida)
+def funcionEsVAlida (opcion_elegida):
     if (opcion_elegida == 1):
         print ("Elegiste Opcion :", opcion_elegida)
 
@@ -39,7 +39,13 @@ def obtener_input_usuarios():
     print(chr(27)+"[0m")
     return indice_opcion
 
+def opciones_de_menu (opciones):
+    if (opciones == 4):
+        exit()
+    else:
+        print ("Opcion: ", opciones)
+
 if __name__ == '__main__':
     saludar()
-    mostrar_menu(MAIN_MENU_OPTIONS, 1)
+    mostrar_menu(MAIN_MENU_OPTIONS, opciones_de_menu)
     obtener_input_usuarios()
