@@ -13,6 +13,9 @@ VER_PELICULAS = [" Pelicula 1", " Pelicula 2", " Pelicula 3"]
 def saludar():
     print (MENSAJE_DE_BIENVENIDA)
 
+def cls():
+	print (chr(27)+"[0m")
+
 def mostrar_menu_en_pantalla(opciones):
     index = 1
     for opcion in opciones:
@@ -43,7 +46,7 @@ def funcionEsValida (opcion_elegida):
 
 def obtener_input_usuarios():
     # print(chr(27)+"[1;33m"+"Ingrese opcion deseada : ")
-    indice_opcion = int(raw_input(chr(27)+"[1;33m"+"Ingrese opcion deseada : "))
+    indice_opcion = int(raw_input(chr(27)+"[1;36m"+"Ingrese opcion deseada : "+chr(27)+"[0m"))
     return indice_opcion
 
 if __name__ == '__main__':
