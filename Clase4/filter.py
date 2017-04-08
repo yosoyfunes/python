@@ -1,7 +1,7 @@
 loquebusco = raw_input("Ingrese un nombre:  ")
 
 # para usar filter necesito crear una funcion que devuelva True o False
-def buscar (l):
+def funcion_buscar (l):
 	return loquebusco in l
 
 	# if loquebusco in l:
@@ -9,12 +9,12 @@ def buscar (l):
 	# else:
 	# 	return False
 
-nombres = ["Matias", "Javier", "Carolina", "Marcos"]
+lista_nombres = ["Matias", "Javier", "Carolina", "Marcos"]
 # filter (funcion, lista)
 
-res = filter (buscar, nombres)
-if (len(res) > 0):
-	print(res)
+datos = filter (funcion_buscar, lista_nombres)
+if (len(datos) > 0):
+	print(datos)
 else:
 	print("no se encontraron resultados..")
 
