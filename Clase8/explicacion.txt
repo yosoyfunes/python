@@ -1,0 +1,19 @@
+Fuente:   http://developeando.net/sockets-python/
+
+Crear una conexión “cliente – servidor” usando sockets en Python
+
+Los sockets los define la Wikipedia como un concepto abstracto en donde 2 aplicaciónes interactuan entre sí a través de un protocolo para intercambiar datos. Los Sockets como tal los hay de varios tipos, pero básicamente hablamos de:
+
+Sockets de flujo: Se caracteriza por utilizar el tipo de sockets SOCK_STREAM que usa como base el protocolo TCP (Transmission Control Protocol). En teoría asegura que los mensajes enviados a destino lleguen en el mismo orden en el que fueron enviados.
+Sockets de datagrama: Este usa el tipo de sockets SOCK_DGRAM y es especial para trabajar con el protocolo UDP (User Datagram Protocol), a diferencia del anterior los mensajes pueden llegar en distinto orden en el que originalmente fueron enviados.
+Nosotros trabaremos en este ejemplo con Sockets de flujo. Veamos ahora como se codifica. Empezaremos con el código del cliente:
+
+cliente.py
+
+server.py
+
+Consideraciones a tener en cuenta
+
+Para el método connect (en el cliente) si queremos hacer pruebas localmente podemos usar “localhost”.
+Para el servidor, el objeto addr representa una tupla con los datos de conexión, host y puerto, por lo que podemos acceder a ellos de la forma addr[0] (que representaría el host) y addr[1] (que representa el puerto).
+Si en el caso de hacer la prueba remota no se realiza la conexión es porque el firewall está interviniendo. Por lo general Windows avisa de la conexión para que añadamos la excepción pero si esto no sucede será necesario añadir Python como excepción en el "Firewall de Windows".
