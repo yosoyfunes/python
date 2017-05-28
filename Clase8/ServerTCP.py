@@ -6,8 +6,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT)) # Escucho los puertos
 s.listen(2) # se queda esperando a que se conecten 2 usuarios
 
-user1, ip1 = s.accept() # acepta el primer cliente y le asigna una tupla
-user2, ip2 = s.accept() # acepta el segundo cliente y le asigna una tupla
+con1, ip1 = s.accept() # acepta el primer cliente y le asigna una tupla (192.168.2.2, 65000)
+con2, ip2 = s.accept() # acepta el segundo cliente y le asigna una tupla (192.168.2.3, 65000)
 
 s.sendall("Todos los clientes conectados")
 

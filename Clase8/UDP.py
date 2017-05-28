@@ -7,7 +7,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # s.sendto("Mensaje" ,(HOST, PORT))
 
 
-s.bind(("0.0.0.0", PORT))
+#s.bind(("0.0.0.0", PORT))
 
 while True:
     msj = raw_input("escribe un mensaje: ")
