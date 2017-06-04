@@ -1,0 +1,17 @@
+Source: myscript
+Maintainer: Matias <matiasanoniz@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: python3-setuptools, python3-all, debhelper (>= 7.4.3)
+Standards-Version: 3.9.1
+
+
+
+
+
+Package: python3-myscript
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: This is an Example Package
+
+
