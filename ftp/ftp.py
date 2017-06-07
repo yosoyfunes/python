@@ -24,7 +24,7 @@ try:
 		s.storbinary('STOR ' + fichero_destino, f)
 		f.close()
 		s.quit()
-		print "archivo " + fichero_destino + " subido exitosamente"
+		print "archivo %s subido exitosamente" % fichero_destino
 	except:
 		print "No se ha podido encontrar el fichero " + fichero_origen
 except:
