@@ -20,3 +20,15 @@ config.set('Section1', 'foo', '%(bar)s is %(baz)s!')
 # Writing our configuration file to 'example.cfg'
 with open('example.cfg', 'wb') as configfile:
     config.write(configfile)
+
+
+'''
+	Ejemplo para guardar clave Cifrada
+
+	config.set('Section1', 'bar', str('Python').encode('base64'))
+
+	str('Python').encode('base64') # UHl0aG9u\n
+	str('UHl0aG9u\n').decode('base64') # Python
+
+'''
+

@@ -13,3 +13,16 @@ print a_float + an_int
 # This is because we are using a RawConfigParser().
 if config.getboolean('Section1', 'a_bool'):
     print config.get('Section1', 'foo')
+
+
+'''
+	Ejemplo para leer clave Cifrada
+
+	dato = config.get('Section1', 'foo')
+	dato.decode('base64')
+	
+	str('Python').encode('base64') # UHl0aG9u\n
+	str('UHl0aG9u\n').decode('base64') # Python
+
+'''
+
