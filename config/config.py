@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-'''
-	Para compilar un archivo py a pyc
-	
-	python -m py_compile archivo.py
+import ConfigParser
 
-'''
+ftp_servidor = 'ftp.servidor.com'
+ftp_usuario  = 'miusuario'
+ftp_clave    = 'miclave'
 
-usuario = "matias"
-password = "password"
+config = ConfigParser.RawConfigParser()
+
+config.add_section('FTP')
+config.set('FTP', 'username', ftp_usuario)
+config.set('FTP', 'password', ftp_clave.encode('base64'))
+config.set('FTP', 'servidor', ftp_servidor)
+
+# Creo un archivo config.ini
+with open('config.ini', 'wb') as configfile:
+    config.write(configfile)

@@ -1,0 +1,3 @@
+[console_scripts]
+myscript = src.mymodule:main
+
