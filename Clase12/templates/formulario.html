@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+    {% block content %}
+    <form class="form-horizontal" name="login" action="http://localhost:5000/store">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="email">Nombre:</label>
+			<div class="col-sm-10">
+		      <input type="text" id="nombre" placeholder="Ingrese un nombre" class="form-control">
+		    </div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="email">Precio:</label>
+			<div class="col-sm-10">
+		      <input type="number" id="precio" placeholder="Precio" class="form-control">
+		    </div>
+		</div>
+	    
+	    <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" id="enviar" class="btn btn-default">ENVIAR</button>
+		    </div>
+		</div>	    
+	</form>
+
+    <script type="text/javascript">
+    	$('#enviar').click(function(e){
+    		e.preventDefault();
+    		
+    		var action = $('form').attr('action');
+	        var data = { 
+	        	name : $('#nombre').val(),
+	        	price : $('#precio').val(),
+	        };
+	        $.ajax({
+	                url : action,
+	                data : JSON.stringify(data), 
+	                method : 'POST',
+	                dataType : 'json',
+	                contentType: "application/json; charset=utf-8",
+	                success : function(response){
+	                    $('#nombre').val('');
+	                    $('#precio').val('');
+	                    alert ("Cargado correctamente");
+	                },
+	                error: function(error){
+	                    alert ("Ocurrio un error!" + error);
+	                }
+	        });
+		});
+
+		/*
+			// Si no quiero usar JQuery, puedo hacerlo por AJAX
+
+		<button type="submit" id="enviar" onclick="enviar()">ENVIAR</button>
+
+		function enviar() {
+			var http = new XMLHttpRequest();
+			var url = "http://localhost:5000/store";
+			var name  = document.getElementById('nombre');
+			var price = document.getElementById('precio');
+
+			var name = document.getElementById('email');
+
+			http.open("POST", url, true);
+			http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+			http.send(JSON.stringify({ name: name, price: password}));
+
+			http.onreadystatechange = function() {
+			    if(http.readyState == 4 && http.status == 200) { 
+			       //aqui obtienes la respuesta de tu peticion
+			       alert(http.responseText);
+			    }
+			}
+
+			return false;
+		}
+		*/
+    </script>
+
+    {% endblock %}
