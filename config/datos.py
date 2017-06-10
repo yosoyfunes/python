@@ -16,7 +16,7 @@ else:
 
 	# Datos FTP
 	ftp_servidor = config.get('FTP', 'servidor')
-	ftp_usuario  = config.get('FTP', 'user')
+	ftp_usuario  = config.get('FTP', 'username')
 	ftp_clave    = config.get('FTP', 'password').decode('base64')
 	ftp_raiz     = '/public_html' # Carpeta del servidor donde queremos subir el fichero
 
