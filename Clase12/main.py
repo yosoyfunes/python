@@ -4,7 +4,7 @@
 from flask import Flask, jsonify, request, render_template, json
 from jinja2 import Template
 
-app = Flask(__name__) #nuestra WSGI application. (web server gateway interfase, es una interfase universal web apps - web servers)
+app = Flask(__name__)
 
 stores = [{
     'name': 'My Store',
