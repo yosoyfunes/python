@@ -25,6 +25,19 @@ PULL -> Recibir cambios
 
 ACTIALIZAR UN REPOSITORIO FORKEADO
 
+Actualizar un proyecto "forkeado" en Github
+
+* Agrego upstream como una nueva rama que tiene el repositorio original
+$ git remote add upstream https://github.com/original/proyecto.git
+
+* actualizo los datos en mi rama upstream
+$ git fetch upstream
+
+* paso los archivos de la rama upstream a mi rama master
+$ git merge upstream/master
+
+* si quiero actualizar mi repositorio GitHub hago push
+$ git push origin
 
 
 VER EL HISTORIAL DE CAMBIOS
