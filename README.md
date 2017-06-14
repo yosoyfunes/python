@@ -4,7 +4,7 @@ python
 > Archivos de python
 
 
-**# COMANDOS BASICOS GIT #**
+**COMANDOS BASICOS GIT**
 
     $ git config --global user.name "John Doe"
     $ git config --global user.email "johndoe@example.com"
