@@ -16,7 +16,8 @@ $ git config --global user.email "johndoe@example.com"
 ```bash
 $ git init
 $ git status >> para it controlando los cambios que vas haciendo
-$ git add . || git add -A   >> con el punto '.' agrego los modificados, con -A agrego los modificados y archivos nuevos
+$ git add . 	>> con el punto '.' agrego los modificados
+$ git add -A 	>> con -A agrego los modificados y archivos nuevos
 $ git commit -m "Comentario a guardar"
 $ git commit -a >> abre un editor y podes hacer comentarios mas extensos
 ```
