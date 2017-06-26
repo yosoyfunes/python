@@ -1,12 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
 from cx_Freeze import setup, Executable
+
+# Dependencies are automatically detected, but it might need fine tuning.
+# build_exe_options = {"packages": ["os"], "excludes": ["tkinter"]}
+
+includefiles = ['windows.ui', 'img/']
+includes = []
+excludes = ['Tkinter']
+packages = ['os','PyQt5']
+
+base = None
+if sys.platform == "win32":
+    base = "Win32GUI"
 
 setup(  name = "ventana",
         version = "0.1" ,
         description = "ventana" ,
-        executables = [Executable("main.py")] , )
+        # options = {"build_exe": build_exe_options},
+        options = {'build_exe': {'includes':includes, 'excludes':excludes, 'packages':packages, 'include_files':includefiles}}, 
+        executables = [Executable("main.pyw", base=base)])
 
 '''  1. Este archivo le he llamado ejecutable.py. Llámale como quieras
      2. Sustituye en Executable el nombre del archivo py o pyw  por el que quieres convertir a exe.
