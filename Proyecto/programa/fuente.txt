@@ -1,0 +1,8 @@
+Iconos:
+
+http://icon-icons.com/
+
+
+Instalaar whl
+
+pip install some-package.whl
