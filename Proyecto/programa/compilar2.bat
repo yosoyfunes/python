@@ -1,1 +1,1 @@
-python ejecutable.py build
+python3 ejecutable.py build

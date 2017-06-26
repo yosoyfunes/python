@@ -6,3 +6,7 @@ http://icon-icons.com/
 Instalaar whl
 
 pip install some-package.whl
+
+instalar con PIP si no funciona con pip install
+
+python -m pip install programa_a_instalar EJ: python -m pip install py2exe
