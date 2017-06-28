@@ -57,6 +57,9 @@
     <property name="toolTipDuration">
      <number>-1</number>
     </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
     <property name="styleSheet">
      <string notr="true">border: 0px;</string>
     </property>
@@ -86,8 +89,24 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>mascotas</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 0px;</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/pet_rat_mouse_11098.png</normaloff>img/pet_rat_mouse_11098.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
     </property>
    </widget>
    <widget class="QListView" name="listView">
@@ -101,6 +120,35 @@
     </property>
     <property name="styleSheet">
      <string notr="true">border: 0px; background-color:: #FFFFFF;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>91</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>historia clinica</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 0px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/newsletter_icon-icons.com_53623.png</normaloff>img/newsletter_icon-icons.com_53623.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
   </widget>
