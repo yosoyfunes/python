@@ -26,7 +26,7 @@ class Dialogo(QDialog):
 			
 	def validar_email(self):
 		email = self.email.text()
-		validar = re.match('^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$', email, re.I)
+		validar = re.match('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', email, re.I)
 		if email == "":
 			self.email.setStyleSheet("border: 1px solid yellow;")
 			return False
