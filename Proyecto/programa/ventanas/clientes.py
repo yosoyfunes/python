@@ -6,7 +6,7 @@ from PyQt5.uic import loadUi
 class Cliente(QDialog):
 	def __init__(self):
 		QDialog.__init__(self)
-		uic.loadUi("validacion.ui", self)
+		uic.loadUi("layout/validacion.ui", self)
 		self.nombre.textChanged.connect(self.validar_nombre)
 		self.email.textChanged.connect(self.validar_email)
 		self.boton.clicked.connect(self.validar_formulario)

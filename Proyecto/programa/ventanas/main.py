@@ -1,62 +1,80 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
+import sys, re
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QSplashScreen, QDesktopWidget
+from PyQt5 import QtGui, QtCore
+from PyQt5.QtCore import Qt
 
-import sys
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QWidget, QPushButton, QDialog, QLabel
-from PyQt5.QtCore import QCoreApplication
-from PyQt5.QtGui import QIcon
+from clientes import *
 
-class Dialogo(QDialog):
+class Ventana(QMainWindow):
     def __init__(self):
-        QDialog.__init__(self)
-        self.resize(300, 300)
-        self.setWindowTitle("Cuadro de diálogo")
-        self.etiqueta = QLabel(self)
+        QMainWindow.__init__(self)
+        x = 900
+        y = 600
+        self.resize(x,y)
+        self.center()  # Centro la pantalla
+        self.setMaximumSize(x,y)
+        self.setMinimumSize(x,y)
+        self.setWindowTitle("Sistema de Turnos PyPET")
+        self.boton = QPushButton(self)
+        self.boton.setText("CARGAR CLIENTES")
+        self.boton.resize(200, 30)
+        self.dialogo = Cliente()
+        self.boton.clicked.connect(self.abrirDialogo)
 
-        btn = QPushButton('SALIR', self)
-        btn.clicked.connect(qApp.quit)
-
-
-class Example(QMainWindow):
-
-    def __init__(self):
-        super().__init__()
-
-        self.initUI()
-
-
-    def initUI(self):
-
-        btn = QPushButton('PRESIONAR', self)
-        btn.setToolTip('Presionar para abrir una segunda <b>Ventana</b> ')
-        # btn.clicked.connect(QCoreApplication.instance().quit)
-        btn.clicked.connect(self.change_text)
-        btn.resize(btn.sizeHint())
-        btn.move(50, 50)
-
-        exitAction = QAction(QIcon('exit.png'), '&Exit', self)
-        exitAction.setShortcut('Ctrl+Q')
-        exitAction.setStatusTip('Exit application')
-        exitAction.triggered.connect(qApp.quit)
-
-        self.statusBar()
-        self.dialogo = Dialogo()
-
-        menubar = self.menuBar()
-        fileMenu = menubar.addMenu('&File')
-        fileMenu.addAction(exitAction)
-
-        self.setGeometry(300, 300, 800, 400)
-        self.setWindowTitle('Menubar')
-        self.show()
-
-    def change_text(self):
-        print('Presionaste el boton')
+    def center(self):
+        qr = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
+  
+    def abrirDialogo(self):
         self.dialogo.exec_()
+
+class Login(QDialog):
+	def __init__(self):
+		QDialog.__init__(self)
+		uic.loadUi("layout/login.ui", self)
+		self.aceptar.clicked.connect(self.ingresar)
+		self.cancelar.clicked.connect(self.salir)
+
+	def ingresar(self):
+		global ventana
+		ventana = Ventana()
+		ventana.show()
+		login.close()
+
+	def salir(self):
+		app.quit()
 
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
 
+    splash_pix = QtGui.QPixmap('img/fondo_pantalla_de_bienvenida.png')
+    splash = QSplashScreen(splash_pix, QtCore.Qt.WindowStaysOnTopHint)
+    splash.show()
+
+    def login():
+        splash.close()
+        global login
+        login = Login()
+        login.setWindowFlags(Qt.Dialog | Qt.FramelessWindowHint | Qt.CustomizeWindowHint)
+        login.show()
+
+        def mousePressEvent(self, e):
+            if e.button() == Qt.LeftButton:
+                self.dragPosition = e.globalPos() - self.frameGeometry().topLeft()
+                e.accept()
+
+        def mouseMoveEvent(self, e):
+            if e.button() == Qt.LeftButton:
+                self.move(e.globalPos() - self.dragPosition)
+                e.accept()
+
+        def keyPressEvent(self, e):
+            if e.key() == Qt.Key_Escape:
+                self.close()
+
+    QtCore.QTimer.singleShot(500, login)
+
+    sys.exit(app.exec_())

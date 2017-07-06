@@ -7,7 +7,7 @@ from cx_Freeze import setup, Executable
 # Dependencies are automatically detected, but it might need fine tuning.
 # build_exe_options = {"packages": ["os"], "excludes": ["tkinter"]}
 
-includefiles = ['windows.ui', 'img/']
+includefiles = ['layout/', 'img/', 'clientes.py']
 includes = []
 excludes = ['Tkinter']
 packages = ['os','PyQt5']
@@ -27,7 +27,7 @@ bdist_msi_options = {
     }
 
 target = Executable(
-    script="main.pyw",
+    script="main.py",
     base= base,
 #    compress=False,
 #    copyDependentFiles=True,

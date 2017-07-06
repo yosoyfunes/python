@@ -14,10 +14,25 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>380</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>380</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="acceptDrops">
    <bool>false</bool>
@@ -25,7 +40,42 @@
   <property name="windowTitle">
    <string notr="true">ingresar</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <property name="styleSheet">
+   <string notr="true">#Dialog {
+	background-color: #FFFFFF;
+	border: 0px;
+}
+
+#aceptar, #cancelar {
+	background-color: #268e84;
+	border: 0px solid #268e84;
+	color: #FFFFFF;
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}
+
+
+#user, #password {
+	border: 0px;
+	border-bottom: 1px solid #CFCFCF;
+}
+
+#user:focus, #user:hover,
+#password:focus, #password:hover {
+	border-bottom: 1px solid gray;
+	background-color: #f9f9f9;
+
+}</string>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QLineEdit" name="user">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -35,7 +85,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="password">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -61,7 +111,7 @@
   <widget class="QPushButton" name="cancelar">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>20</x>
      <y>140</y>
      <width>131</width>
      <height>41</height>
@@ -75,16 +125,17 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
+     <y>10</y>
      <width>330</width>
-     <height>25</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>Calibri Light</family>
+     <pointsize>18</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
      <underline>false</underline>
      <strikeout>false</strikeout>
      <stylestrategy>PreferDefault</stylestrategy>

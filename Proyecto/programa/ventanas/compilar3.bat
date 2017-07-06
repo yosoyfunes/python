@@ -1,0 +1,1 @@
+python ejecutable.py bdist_msi
