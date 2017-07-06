@@ -21,10 +21,26 @@ product_name = 'PyPET'
 
 bdist_msi_options = {
     'upgrade_code': '{66620F3A-DC3A-11E2-B341-002219E9B01E}',
-    'add_to_path': False,
+    'add_to_path': True,
     'initial_target_dir': r'[ProgramFilesFolder]\%s\%s' % (company_name, product_name),
     # 'includes': ['atexit', 'PySide.QtNetwork'], # <-- this causes error
     }
+
+shortcut_table = [
+    ("DesktopShortcut",         # Shortcut
+     "DesktopFolder",           # Directory_
+     "Tool",                    # Name
+     "TARGETDIR",               # Component_
+     "[TARGETDIR]\main.exe",    # Target
+     None,                      # Arguments
+     None,                      # Description
+     None,                      # Hotkey
+     None,                      # Icon
+     None,                      # IconIndex
+     None,                      # ShowCmd
+     "TARGETDIR",               # WkDir
+     )
+    ]
 
 target = Executable(
     script="main.py",
@@ -35,8 +51,20 @@ target = Executable(
 #    appendScriptToLibrary=False,
     icon='farmacia.ico',
     shortcutName="Sistema de Turnos",
-    shortcutDir="DesktopFolder"
+    shortcutDir="DesktopFolder",
     )
+
+msi_data = {"Shortcut": shortcut_table}
+
+msi_options = {
+    'includes':includes,
+    'add_to_path': True, 
+    'excludes':excludes,
+    'initial_target_dir': r'[ProgramFilesFolder]\%s\%s' % (company_name, product_name), 
+    'packages':packages, 
+    'include_files':includefiles, 
+    "include_msvcr": True,
+    "data": msi_data}
 
 setup(  name = "PyPet",
         version = "1.0.1",
@@ -44,8 +72,8 @@ setup(  name = "PyPet",
         author="Matias Anoniz",
         # options = {"build_exe": build_exe_options},
         options = {
-                'build_exe': {'includes':includes, 'excludes':excludes, 'packages':packages, 'include_files':includefiles},
-                'build_msi': {'includes':includes, 'excludes':excludes, 'packages':packages, 'include_files':includefiles}
+                'build_exe': {'includes':includes, 'excludes':excludes, 'packages':packages, 'include_files':includefiles, "include_msvcr": True},
+                'build_msi': msi_options
         }, 
         # executables = [Executable("main.pyw", base=base)])
         executables=[target]
