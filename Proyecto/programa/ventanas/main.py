@@ -75,6 +75,6 @@ if __name__ == '__main__':
             if e.key() == Qt.Key_Escape:
                 self.close()
 
-    QtCore.QTimer.singleShot(500, login)
+    QtCore.QTimer.singleShot(200, login)
 
     sys.exit(app.exec_())
