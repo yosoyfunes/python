@@ -7,10 +7,12 @@ from cx_Freeze import setup, Executable
 # Dependencies are automatically detected, but it might need fine tuning.
 # build_exe_options = {"packages": ["os"], "excludes": ["tkinter"]}
 
-includefiles = ['layout/', 'img/', 'clientes.py']
+# python -m compileall .
+
+includefiles = ['layout/', 'img/', 'clientes.py', 'base.py', 'buscarClientes.py']
 includes = []
 excludes = ['Tkinter']
-packages = ['os','PyQt5']
+packages = ['os','PyQt5', 'sqlalchemy']
 
 base = None
 if sys.platform == "win32":
@@ -49,7 +51,7 @@ target = Executable(
 #    copyDependentFiles=True,
 #    appendScriptToExe=True,
 #    appendScriptToLibrary=False,
-    icon='farmacia.ico',
+    icon='img/farmacia.ico',
     shortcutName="Sistema de Turnos",
     shortcutDir="DesktopFolder",
     )

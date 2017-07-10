@@ -106,7 +106,7 @@ class Cliente(QDialog):
             self.iniciar()
         else:
             QMessageBox.warning(self, "Formulario incorrecto", "Validación incorrecta", QMessageBox.Discard)
-    
+
     def editar(self):
         pass
     def guardar(self):
@@ -114,7 +114,7 @@ class Cliente(QDialog):
 
     def cancelar(self):
         self.iniciar()
-        self.close()
+        # self.close()
 
     def buscar(self):
         self.buscarCl = buscarClientes()

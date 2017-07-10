@@ -27,33 +27,20 @@ class buscarClientes(QDialog):
         personas = session.query(Clientes).all()
         cont = 0
         for row in personas:
-            print(row.nombre + "  " +row.apellido)
-            print('paso' + str(row.id))
+            print(row.id)
             
-            id = QTableWidgetItem(row.id)
+            id = QTableWidgetItem(str(cont))
             nombre = QTableWidgetItem(row.nombre)
             apellido = QTableWidgetItem(row.apellido)
             telefono = QTableWidgetItem(row.telefono)
             email = QTableWidgetItem(row.email)
 
-            self.tabla.setItem(0, 0, id)
-            self.tabla.setItem(0, 1, nombre)
-            self.tabla.setItem(0, 2, apellido)
-            self.tabla.setItem(0, 3, telefono)
-            self.tabla.setItem(0, 4, email)
+            self.tabla.setItem(cont, 0, id)
+            self.tabla.setItem(cont, 1, nombre)
+            self.tabla.setItem(cont, 2, apellido)
+            self.tabla.setItem(cont, 3, telefono)
+            self.tabla.setItem(cont, 4, email)
 
             self.tabla.insertRow(row.id)
 
             cont = cont + 1
-
-#        id = QTableWidgetItem('2')
-#        nombre = QTableWidgetItem('Pepe')
-#        apellido = QTableWidgetItem('Argento')
-#        telefono = QTableWidgetItem('1546730387')
-#        email = QTableWidgetItem('matias@gmail.com')
-
-#        self.tabla.setItem(1, 0, id)
-#        self.tabla.setItem(1, 1, nombre)
-#        self.tabla.setItem(1, 2, apellido)
-#        self.tabla.setItem(1, 3, telefono)
-#        self.tabla.setItem(1, 4, email)

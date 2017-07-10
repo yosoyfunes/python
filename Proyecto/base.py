@@ -31,4 +31,3 @@ if path.exists(nombre_db):
     pass
 else:
     Base.metadata.create_all(engine)
-    print("paso por Base.metadata")
