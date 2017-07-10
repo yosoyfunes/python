@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
-import sys
-from PyQt5.QtWidgets import QWidget, QApplication, QDesktopWidget, QAction, qApp
+from PyQt5.QtWidgets import QWidget, QApplication, QDesktopWidget, QAction, qApp, QMenu, QMainWindow
 from PyQt5.QtGui import QIcon
 
-class Aplicacion(QWidget):
+class MainWindow(QMainWindow):
     def __init__(self):
-        super().__init__()
+        super(MainWindow, self).__init__()
         self.initUI()
         self.createMenus()
 
@@ -23,42 +22,88 @@ class Aplicacion(QWidget):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
+    def funcion(self):
+        pass
+
+    def createActions(self):
+        self.newAct = QAction("&New", self, shortcut=QKeySequence.New,
+                              statusTip="Create a new file", triggered=self.newFile)
+
+        self.openAct = QAction("&Open...", self, shortcut=QKeySequence.Open,
+                               statusTip="Open an existing file", triggered=self.open)
+
+        self.saveAct = QAction("&Save", self, shortcut=QKeySequence.Save,
+                               statusTip="Save the document to disk", triggered=self.save)
+
+        self.printAct = QAction("&Print...", self, shortcut=QKeySequence.Print,
+                                statusTip="Print the document", triggered=self.print_)
+
+        self.exitAct = QAction("E&xit", self, shortcut="Ctrl+Q",
+                               statusTip="Exit the application", triggered=self.close)
+
+        self.undoAct = QAction("&Undo", self, shortcut=QKeySequence.Undo,
+                               statusTip="Undo the last operation", triggered=self.undo)
+
+        self.redoAct = QAction("&Redo", self, shortcut=QKeySequence.Redo,
+                               statusTip="Redo the last operation", triggered=self.redo)
+
+        self.cutAct = QAction("Cu&t", self, shortcut=QKeySequence.Cut,
+                              statusTip="Cut the current selection's contents to the clipboard",
+                              triggered=self.cut)
+
+        self.copyAct = QAction("&Copy", self, shortcut=QKeySequence.Copy,
+                               statusTip="Copy the current selection's contents to the clipboard",
+                               triggered=self.copy)
+
+        self.pasteAct = QAction("&Paste", self, shortcut=QKeySequence.Paste,
+                                statusTip="Paste the clipboard's contents into the current selection",
+                                triggered=self.paste)
+
+        self.boldAct = QAction("&Bold", self, checkable=True,
+                               shortcut="Ctrl+B", statusTip="Make the text bold",
+                               triggered=self.bold)
+
+
+
     def createMenus(self):
         self.fileMenu = self.menuBar().addMenu("&File")
-        self.fileMenu.addAction(self.newAct)
-        self.fileMenu.addAction(self.openAct)
-        self.fileMenu.addAction(self.saveAct)
-        self.fileMenu.addAction(self.printAct)
+        self.fileMenu.addAction(self.funcion())
+        self.fileMenu.addAction(self.funcion())
+        self.fileMenu.addAction(self.funcion())
+        self.fileMenu.addAction(self.funcion())
         self.fileMenu.addSeparator()
-        self.fileMenu.addAction(self.exitAct)
+        self.fileMenu.addAction(self.funcion())
 
         self.editMenu = self.menuBar().addMenu("&Edit")
-        self.editMenu.addAction(self.undoAct)
-        self.editMenu.addAction(self.redoAct)
+        self.editMenu.addAction(self.funcion())
+        self.editMenu.addAction(self.funcion())
         self.editMenu.addSeparator()
-        self.editMenu.addAction(self.cutAct)
-        self.editMenu.addAction(self.copyAct)
-        self.editMenu.addAction(self.pasteAct)
+        self.editMenu.addAction(self.funcion())
+        self.editMenu.addAction(self.funcion())
+        self.editMenu.addAction(self.funcion())
         self.editMenu.addSeparator()
 
         self.helpMenu = self.menuBar().addMenu("&Help")
-        self.helpMenu.addAction(self.aboutAct)
-        self.helpMenu.addAction(self.aboutQtAct)
+        self.helpMenu.addAction(self.funcion())
+        self.helpMenu.addAction(self.funcion())
 
         self.formatMenu = self.editMenu.addMenu("&Format")
-        self.formatMenu.addAction(self.boldAct)
-        self.formatMenu.addAction(self.italicAct)
+        self.formatMenu.addAction(self.funcion())
+        self.formatMenu.addAction(self.funcion())
         self.formatMenu.addSeparator().setText("Alignment")
-        self.formatMenu.addAction(self.leftAlignAct)
-        self.formatMenu.addAction(self.rightAlignAct)
-        self.formatMenu.addAction(self.justifyAct)
-        self.formatMenu.addAction(self.centerAct)
+        self.formatMenu.addAction(self.funcion())
+        self.formatMenu.addAction(self.funcion())
+        self.formatMenu.addAction(self.funcion())
+        self.formatMenu.addAction(self.funcion())
         self.formatMenu.addSeparator()
-        self.formatMenu.addAction(self.setLineSpacingAct)
-        self.formatMenu.addAction(self.setParagraphSpacingAct)
+        self.formatMenu.addAction(self.funcion())
+        self.formatMenu.addAction(self.funcion())
 
 
 if __name__ == '__main__':
+    import sys
+
     app = QApplication(sys.argv)
-    prg = Aplicacion()
+    window = MainWindow()
+    window.show()
     sys.exit(app.exec_())

@@ -14,13 +14,13 @@
    <string>Datos de Clientes</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#nuevo, #editar, #guardar, #cancelar, #buscar {
+   <string notr="true">QPushButton {
 	border: 1px solid #CFCFCF;
 	background-color: #d0d0d0;
 	
 }
 
-#nombre, #apellido, #telefono, #email {
+QLineEdit {
 	border: 1px solid #CFCFCF;
 	background-color: #FFFFFF;
 	
