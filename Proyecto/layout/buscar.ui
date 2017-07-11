@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>739</width>
-    <height>393</height>
+    <width>742</width>
+    <height>517</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,11 +37,73 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>50</y>
+     <y>160</y>
      <width>721</width>
      <height>331</height>
     </rect>
    </property>
+  </widget>
+  <widget class="QLineEdit" name="line_cliente">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>50</y>
+     <width>461</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>211</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>seleccionar:</string>
+   </property>
+   <widget class="QRadioButton" name="ck_nombre">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NOMBRE</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="ck_apellido">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>APELLIDO</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="ck_email">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EMAIL</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

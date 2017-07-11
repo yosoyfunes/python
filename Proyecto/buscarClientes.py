@@ -15,32 +15,40 @@ class buscarClientes(QDialog):
     def __init__(self):
         QDialog.__init__(self)
         uic.loadUi("layout/buscar.ui", self)
+        self.line_cliente.textChanged.connect(self.mostrarDatos)
 
         self.tabla.clearContents()
-
         self.tabla.setColumnCount(5)
         self.tabla.setRowCount(1)
         self.tabla.setHorizontalHeaderLabels(['id', 'nombre', 'apellido', 'telefono', 'email'])
 
-        # self.tabla.insertRow(1)
+        # personas = session.query(Clientes).all()
+        # user = session.query(Clientes).filter(Clientes.id == 1)
 
-        personas = session.query(Clientes).all()
-        cont = 0
-        for row in personas:
-            print(row.id)
-            
-            id = QTableWidgetItem(str(cont))
+    def mostrarDatos(self):
+    	self.tabla.clearContents()
+    	print(self.line_cliente.text())
+
+    	contador = 0
+
+    	dato = self.line_cliente.text()
+
+    	msj = session.query(Clientes).filter(Clientes.nombre.like('%'+dato+'%'))
+    	self.tabla.setRowCount(1)
+
+    	for row in msj:
+            id = QTableWidgetItem(str(contador))
             nombre = QTableWidgetItem(row.nombre)
             apellido = QTableWidgetItem(row.apellido)
             telefono = QTableWidgetItem(row.telefono)
             email = QTableWidgetItem(row.email)
 
-            self.tabla.setItem(cont, 0, id)
-            self.tabla.setItem(cont, 1, nombre)
-            self.tabla.setItem(cont, 2, apellido)
-            self.tabla.setItem(cont, 3, telefono)
-            self.tabla.setItem(cont, 4, email)
+            self.tabla.setItem(contador, 0, id)
+            self.tabla.setItem(contador, 1, nombre)
+            self.tabla.setItem(contador, 2, apellido)
+            self.tabla.setItem(contador, 3, telefono)
+            self.tabla.setItem(contador, 4, email)
 
             self.tabla.insertRow(row.id)
 
-            cont = cont + 1
+            contador = contador + 1
