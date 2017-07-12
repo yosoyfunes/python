@@ -6,6 +6,8 @@ from PyQt5 import uic
 
 from clientes import Cliente
 
+# python -m PyQt5.uic.pyuic -o Qmain.py main.ui
+
 class Ventana(QMainWindow):
 	def __init__(self):
 		QMainWindow.__init__(self)

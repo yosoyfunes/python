@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>900</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/farmacia.ico</normaloff>../img/farmacia.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_nvo_clientes">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Cargar Clientes</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	border: 2px solid #6A6A6A;
+	background-color: #FFF;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/Mclientes.ico</normaloff>../img/Mclientes.ico</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_nva_mascota">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Cargar Mascotas</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	border: 2px solid #6A6A6A;
+	background-color: #FFF;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/Mmascotas.ico</normaloff>../img/Mmascotas.ico</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ver_turnos">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>20</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Listar Turnos</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	border: 2px solid #6A6A6A;
+	background-color: #FFF;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/Mturnos_2.ico</normaloff>../img/Mturnos_2.ico</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCleintes">
+    <property name="title">
+     <string>Clientes</string>
+    </property>
+    <addaction name="actionCargar"/>
+    <addaction name="actionListar"/>
+   </widget>
+   <widget class="QMenu" name="menuMascotas">
+    <property name="title">
+     <string>Mascotas</string>
+    </property>
+    <addaction name="actionCargarMascotas"/>
+    <addaction name="actionListarMascotas"/>
+   </widget>
+   <widget class="QMenu" name="menuTurnos">
+    <property name="title">
+     <string>Turnos</string>
+    </property>
+    <addaction name="actionCargarTurnos"/>
+    <addaction name="actionListarTurnos"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuCleintes"/>
+   <addaction name="menuMascotas"/>
+   <addaction name="menuTurnos"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <action name="actionSalir">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Ucancelar.ico</normaloff>Ucancelar.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Salir </string>
+   </property>
+   <property name="iconText">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionCargar">
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/Mclientes_2.ico</normaloff>../img/Mclientes_2.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Cargar</string>
+   </property>
+  </action>
+  <action name="actionListar">
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/MPrint.ico</normaloff>../img/MPrint.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCargarMascotas">
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/Mmascotas_2.ico</normaloff>../img/Mmascotas_2.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Cargar</string>
+   </property>
+  </action>
+  <action name="actionListarMascotas">
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/MPrint.ico</normaloff>../img/MPrint.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCargarTurnos">
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/Mturnos.ico</normaloff>../img/Mturnos.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Cargar</string>
+   </property>
+  </action>
+  <action name="actionListarTurnos">
+   <property name="icon">
+    <iconset>
+     <normaloff>../img/MPrint.ico</normaloff>../img/MPrint.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -6,23 +6,47 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>570</width>
-    <height>296</height>
+    <width>530</width>
+    <height>300</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>530</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>530</width>
+    <height>300</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Datos de Clientes</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>persona.png</normaloff>persona.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QPushButton {
-	border: 1px solid #CFCFCF;
-	background-color: #d0d0d0;
-	
+	border: 2px solid #A5A5A5;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: #b8cbff;
+
+}
+
+QLabel {
+	text-align: right;
 }
 
 QLineEdit {
 	border: 1px solid #CFCFCF;
 	background-color: #FFFFFF;
+	border-radius: 5px;
 	
 }
 </string>
@@ -48,15 +72,28 @@ QLineEdit {
     <rect>
      <x>210</x>
      <y>210</y>
-     <width>161</width>
-     <height>61</height>
+     <width>70</width>
+     <height>70</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>aceptar</string>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>GUARDAR</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Ugrabar.ico</normaloff>Ugrabar.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QLineEdit" name="nombre">
@@ -106,53 +143,56 @@ QLineEdit {
   <widget class="QLabel" name="txt_nombre">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>20</y>
-     <width>75</width>
-     <height>31</height>
+     <width>60</width>
+     <height>30</height>
     </rect>
    </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
    <property name="text">
-    <string>NOMBRE:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;NOMBRE :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="txt_apellido">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>60</y>
-     <width>75</width>
-     <height>31</height>
+     <width>60</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>APELLIDO:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;APELLIDO :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="txt_telefono">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>100</y>
-     <width>75</width>
-     <height>31</height>
+     <width>60</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>TELEFONO:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;TELEFONO :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="txt_email">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>140</y>
-     <width>75</width>
-     <height>31</height>
+     <width>60</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>E-MAIL:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;E-MAIL :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="telefono">
@@ -174,8 +214,8 @@ QLineEdit {
   <widget class="QLabel" name="imagen">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>20</y>
+     <x>390</x>
+     <y>30</y>
      <width>121</width>
      <height>111</height>
     </rect>
@@ -196,17 +236,30 @@ QLineEdit {
   <widget class="QPushButton" name="btnCancelar">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>300</x>
      <y>210</y>
-     <width>75</width>
-     <height>61</height>
+     <width>70</width>
+     <height>70</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>cancelar</string>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>CANCELAR</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Ucancelar.ico</normaloff>Ucancelar.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="btnEditar">
@@ -214,15 +267,28 @@ QLineEdit {
     <rect>
      <x>120</x>
      <y>210</y>
-     <width>75</width>
-     <height>61</height>
+     <width>70</width>
+     <height>70</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>editar</string>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>EDITAR</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Ueditar.ico</normaloff>Ueditar.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="btnNuevo">
@@ -230,31 +296,60 @@ QLineEdit {
     <rect>
      <x>30</x>
      <y>210</y>
-     <width>75</width>
-     <height>61</height>
+     <width>70</width>
+     <height>70</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>agregar</string>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>NUEVO</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Unuevo.ico</normaloff>Unuevo.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="btnBuscar">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>380</x>
      <y>210</y>
-     <width>75</width>
-     <height>61</height>
+     <width>70</width>
+     <height>70</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>buscar</string>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>BUSCAR</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Ubuscar.ico</normaloff>Ubuscar.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
  </widget>
