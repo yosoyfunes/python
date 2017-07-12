@@ -15,11 +15,6 @@ class MyApplication(QMainWindow):
 		QMainWindow.__init__(self)
 		uic.loadUi("layout/Qmain.ui", self)
 
-		# Set up the user interface from Designer.
-        self.ui = Ui_ImageDialog()
-        self.ui.setupUi(self)
-
-	
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
 	window = MyApplication()
