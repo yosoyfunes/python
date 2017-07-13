@@ -165,6 +165,8 @@
      <string>Ayuda</string>
     </property>
     <addaction name="actionSalir"/>
+    <addaction name="separator"/>
+    <addaction name="actionAcerca_de"/>
    </widget>
    <addaction name="menuCleintes"/>
    <addaction name="menuMascotas"/>
@@ -244,6 +246,11 @@
    </property>
    <property name="text">
     <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de">
+   <property name="text">
+    <string>Acerca de..</string>
    </property>
   </action>
  </widget>

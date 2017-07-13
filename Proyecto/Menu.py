@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# python -m PyQt5.uic.pyuic -o Qmain.py main.ui
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtCore import Qt
@@ -11,7 +13,7 @@ if __name__ == "__main__":
     window = QMainWindow()
     main_window = Ui_MainWindow()
     main_window.setupUi(window)
-    window.setWindowFlags(Qt.FramelessWindowHint | Qt.CustomizeWindowHint)
+#   window.setWindowFlags(Qt.FramelessWindowHint | Qt.CustomizeWindowHint)
     window.show()
 
     sys.exit(app.exec_())

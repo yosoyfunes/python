@@ -14,6 +14,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(900, 650)
+        MainWindow.statusBar().showMessage('version    100.0.0')
         MainWindow.setMinimumSize(QtCore.QSize(900, 650))
         MainWindow.setMaximumSize(QtCore.QSize(900, 650))
         icon = QtGui.QIcon()
@@ -24,10 +25,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.btn_nvo_clientes = QtWidgets.QPushButton(self.centralwidget)
         self.btn_nvo_clientes.setGeometry(QtCore.QRect(20, 20, 90, 90))
-        self.btn_nvo_clientes.setStyleSheet("QPushButton {\n"
-"    border: 2px solid #6A6A6A;\n"
-"    background-color: #FFF;\n"
-"}")
+        self.btn_nvo_clientes.setStyleSheet('''QPushButton { border: 2px solid #6A6A6A; background-color: #FFF; }''')
         self.btn_nvo_clientes.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("img/Mclientes.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -121,7 +119,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Sistema de turnos PyPET"))
         self.btn_nvo_clientes.setToolTip(_translate("MainWindow", "Cargar Clientes"))
         self.btn_nva_mascota.setToolTip(_translate("MainWindow", "Cargar Mascotas"))
         self.btn_ver_turnos.setToolTip(_translate("MainWindow", "Listar Turnos"))
