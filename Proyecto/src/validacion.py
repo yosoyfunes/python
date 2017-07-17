@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'validacion.ui'
-#
-# Created by: PyQt5 UI code generator 5.9
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Dialog(object):
@@ -15,28 +9,13 @@ class Ui_Dialog(object):
         Dialog.setMinimumSize(QtCore.QSize(530, 300))
         Dialog.setMaximumSize(QtCore.QSize(530, 300))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("persona.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("img/persona.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
-        Dialog.setStyleSheet("QPushButton {\n"
-"    border: 2px solid #A5A5A5;\n"
-"    border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #b8cbff;\n"
-"\n"
-"}\n"
-"\n"
-"QLabel {\n"
-"    text-align: right;\n"
-"}\n"
-"\n"
-"QLineEdit {\n"
-"    border: 1px solid #CFCFCF;\n"
-"    background-color: #FFFFFF;\n"
-"    border-radius: 5px;\n"
-"    \n"
-"}\n"
-"")
+        Dialog.setStyleSheet('''
+            QPushButton { border: 2px solid #A5A5A5; border-radius: 10px; }
+            QPushButton:hover { background-color: #b8cbff; }
+            QLabel { text-align: right; }
+            QLineEdit { border: 1px solid #CFCFCF; background-color: #FFFFFF; border-radius: 5px; }''')
         self.email = QtWidgets.QLineEdit(Dialog)
         self.email.setEnabled(True)
         self.email.setGeometry(QtCore.QRect(110, 140, 250, 31))
@@ -47,7 +26,7 @@ class Ui_Dialog(object):
         self.btnGuardar.setStyleSheet("")
         self.btnGuardar.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("Ugrabar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("img/Ugrabar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnGuardar.setIcon(icon1)
         self.btnGuardar.setIconSize(QtCore.QSize(50, 50))
         self.btnGuardar.setObjectName("btnGuardar")
@@ -85,7 +64,7 @@ class Ui_Dialog(object):
         self.imagen = QtWidgets.QLabel(Dialog)
         self.imagen.setGeometry(QtCore.QRect(390, 30, 121, 111))
         self.imagen.setText("")
-        self.imagen.setPixmap(QtGui.QPixmap("../img/persona.png"))
+        self.imagen.setPixmap(QtGui.QPixmap("img/persona.png"))
         self.imagen.setScaledContents(True)
         self.imagen.setWordWrap(False)
         self.imagen.setObjectName("imagen")
@@ -94,7 +73,7 @@ class Ui_Dialog(object):
         self.btnCancelar.setStyleSheet("")
         self.btnCancelar.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("Ucancelar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("img/Ucancelar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCancelar.setIcon(icon2)
         self.btnCancelar.setIconSize(QtCore.QSize(50, 50))
         self.btnCancelar.setObjectName("btnCancelar")
@@ -103,7 +82,7 @@ class Ui_Dialog(object):
         self.btnEditar.setStyleSheet("")
         self.btnEditar.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("Ueditar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("img/Ueditar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnEditar.setIcon(icon3)
         self.btnEditar.setIconSize(QtCore.QSize(50, 50))
         self.btnEditar.setObjectName("btnEditar")
@@ -112,7 +91,7 @@ class Ui_Dialog(object):
         self.btnNuevo.setStyleSheet("")
         self.btnNuevo.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("Unuevo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("img/Unuevo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnNuevo.setIcon(icon4)
         self.btnNuevo.setIconSize(QtCore.QSize(50, 50))
         self.btnNuevo.setObjectName("btnNuevo")
@@ -122,7 +101,7 @@ class Ui_Dialog(object):
         self.btnBuscar.setStyleSheet("")
         self.btnBuscar.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("Ubuscar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("img/Ubuscar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnBuscar.setIcon(icon5)
         self.btnBuscar.setIconSize(QtCore.QSize(50, 50))
         self.btnBuscar.setObjectName("btnBuscar")

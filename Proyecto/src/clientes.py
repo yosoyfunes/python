@@ -2,12 +2,12 @@ import re
 from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5 import uic
 
-from buscarClientes import buscarClientes
+from src.buscarClientes import buscarClientes
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from base import Clientes, Base, nombre_db
+from src.base import Clientes, Base, nombre_db
 
 engine = create_engine('sqlite:///' + nombre_db)
 Base.metadata.bind = engine

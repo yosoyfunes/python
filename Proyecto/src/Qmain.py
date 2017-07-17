@@ -1,14 +1,12 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'main.ui'
-#
-# Created by: PyQt5 UI code generator 5.9
-#
-# WARNING! All changes made in this file will be lost!
 
 # python -m PyQt5.uic.pyuic -o Qmain.py main.ui
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QAction, qApp
+
+from src.clientes import Cliente
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -34,10 +32,7 @@ class Ui_MainWindow(object):
         self.btn_nvo_clientes.setObjectName("btn_nvo_clientes")
         self.btn_nva_mascota = QtWidgets.QPushButton(self.centralwidget)
         self.btn_nva_mascota.setGeometry(QtCore.QRect(140, 20, 90, 90))
-        self.btn_nva_mascota.setStyleSheet("QPushButton {\n"
-"    border: 2px solid #6A6A6A;\n"
-"    background-color: #FFF;\n"
-"}")
+        self.btn_nva_mascota.setStyleSheet('''QPushButton { border: 2px solid #6A6A6A; background-color: #FFF; }''')
         self.btn_nva_mascota.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("img/Mmascotas.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -46,10 +41,7 @@ class Ui_MainWindow(object):
         self.btn_nva_mascota.setObjectName("btn_nva_mascota")
         self.btn_ver_turnos = QtWidgets.QPushButton(self.centralwidget)
         self.btn_ver_turnos.setGeometry(QtCore.QRect(260, 20, 90, 90))
-        self.btn_ver_turnos.setStyleSheet("QPushButton {\n"
-"    border: 2px solid #6A6A6A;\n"
-"    background-color: #FFF;\n"
-"}")
+        self.btn_ver_turnos.setStyleSheet('''QPushButton { border: 2px solid #6A6A6A; background-color: #FFF; }''')
         self.btn_ver_turnos.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("img/Mturnos_2.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -114,8 +106,17 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuTurnos.menuAction())
         self.menubar.addAction(self.menuAyuda.menuAction())
 
+        self.btn_nvo_clientes.clicked.connect(self.ventanaClientes) # Boton nuevo cliente
+
+        self.actionSalir.triggered.connect(qApp.quit) # Boton Salir o Ctrl + Q
+        self.actionCargar.triggered.connect(self.ventanaClientes) # Boton Salir o Ctrl + Q
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def ventanaClientes(self):
+        self.buscarCl = Cliente()
+        self.buscarCl.exec_()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

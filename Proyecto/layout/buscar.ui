@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Datos de Clientes</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/buscar.ico</normaloff>../img/buscar.ico</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QLabel {
 	color: #000000;

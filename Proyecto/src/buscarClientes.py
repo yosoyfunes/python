@@ -4,7 +4,7 @@ from PyQt5 import uic
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from base import Clientes, Base, nombre_db
+from src.base import Clientes, Base, nombre_db
 
 engine = create_engine('sqlite:///' + nombre_db)
 Base.metadata.bind = engine

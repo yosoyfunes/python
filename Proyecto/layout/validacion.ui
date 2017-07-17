@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>persona.png</normaloff>persona.png</iconset>
+    <normaloff>../img/persona.png</normaloff>../img/persona.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton {
@@ -87,7 +87,7 @@ QLineEdit {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>Ugrabar.ico</normaloff>Ugrabar.ico</iconset>
+     <normaloff>../img/Ugrabar.ico</normaloff>../img/Ugrabar.ico</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -253,7 +253,7 @@ QLineEdit {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>Ucancelar.ico</normaloff>Ucancelar.ico</iconset>
+     <normaloff>../img/Ucancelar.ico</normaloff>../img/Ucancelar.ico</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -282,7 +282,7 @@ QLineEdit {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>Ueditar.ico</normaloff>Ueditar.ico</iconset>
+     <normaloff>../img/Ueditar.ico</normaloff>../img/Ueditar.ico</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -311,7 +311,7 @@ QLineEdit {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>Unuevo.ico</normaloff>Unuevo.ico</iconset>
+     <normaloff>../img/Unuevo.ico</normaloff>../img/Unuevo.ico</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -343,7 +343,7 @@ QLineEdit {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>Ubuscar.ico</normaloff>Ubuscar.ico</iconset>
+     <normaloff>../img/Ubuscar.ico</normaloff>../img/Ubuscar.ico</iconset>
    </property>
    <property name="iconSize">
     <size>

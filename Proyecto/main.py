@@ -1,82 +1,38 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QSplashScreen, QDesktopWidget
-from PyQt5 import QtGui, QtCore
-from PyQt5.QtCore import Qt
-from PyQt5 import uic
-
-from clientes import Cliente
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # python -m PyQt5.uic.pyuic -o Qmain.py main.ui
 
-class Ventana(QMainWindow):
-	def __init__(self):
-		QMainWindow.__init__(self)
-		x = 900
-		y = 600
-		self.resize(x,y)
-		self.center()  # Centro la pantalla
-		self.setMaximumSize(x,y)
-		self.setMinimumSize(x,y)
-		self.setWindowTitle("Sistema de Turnos PyPET")
-		self.boton = QPushButton(self)
-		self.boton.setText("CARGAR CLIENTES")
-		self.boton.resize(200, 30)
-		self.boton.clicked.connect(self.abrirDialogo)
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
+from PyQt5.QtWidgets import QDialog, QSplashScreen, QDesktopWidget
+from PyQt5.QtCore import Qt
+from PyQt5 import QtGui, QtCore
 
-	def center(self):
-		qr = self.frameGeometry()
-		cp = QDesktopWidget().availableGeometry().center()
-		qr.moveCenter(cp)
-		self.move(qr.topLeft())
-  
-	def abrirDialogo(self):
-		self.dialogo = Cliente()
-		self.dialogo.exec_()
+# from src.login import Ui_Login, Ui_Bienvenida
+from src.Qmain import Ui_MainWindow
 
-class Login(QDialog):
-	def __init__(self):
-		QDialog.__init__(self)
-		uic.loadUi("layout/login.ui", self)
-		self.aceptar.clicked.connect(self.ingresar)
-		self.cancelar.clicked.connect(self.salir)
-
-	def ingresar(self):
-		global ventana
-		ventana = Ventana()
-		ventana.show()
-		login.close()
-
-	def salir(self):
-		app.quit()
-
-if __name__ == '__main__':
-	app = QApplication(sys.argv)
-
+def Ui_Bienvenida():
 	splash_pix = QtGui.QPixmap('img/fondo_pantalla_de_bienvenida.png')
 	splash = QSplashScreen(splash_pix, QtCore.Qt.WindowStaysOnTopHint)
 	splash.show()
 
-	def login():
+	def Bienvenida():
 		splash.close()
-		global login
-		login = Login()
-		login.setWindowFlags(Qt.Dialog | Qt.FramelessWindowHint | Qt.CustomizeWindowHint)
-		login.show()
+		Ingresar()
 
-		def mousePressEvent(self, e):
-			if e.button() == Qt.LeftButton:
-				self.dragPosition = e.globalPos() - self.frameGeometry().topLeft()
-				e.accept()
+	QtCore.QTimer.singleShot(1000, Bienvenida)
 
-		def mouseMoveEvent(self, e):
-			if e.button() == Qt.LeftButton:
-				self.move(e.globalPos() - self.dragPosition)
-				e.accept()
+def Ingresar():
+	window.show()
 
-		def keyPressEvent(self, e):
-			if e.key() == Qt.Key_Escape:
-				self.close()
+if __name__ == '__main__':
+	app = QApplication(sys.argv)
+	
+	window = QMainWindow()
+	main_window = Ui_MainWindow()
+	main_window.setupUi(window)
+#	window.show()
 
-	QtCore.QTimer.singleShot(200, login)
-
+	Ui_Bienvenida()
 	sys.exit(app.exec_())
