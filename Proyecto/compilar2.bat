@@ -1,1 +1,0 @@
-python ejecutable.py build
