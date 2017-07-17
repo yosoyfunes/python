@@ -27,7 +27,7 @@ class buscarClientes(QDialog):
 
     def mostrarDatos(self):
     	self.tabla.clearContents()
-    	print(self.line_cliente.text())
+    	# print(self.line_cliente.text())
 
     	contador = 0
 
