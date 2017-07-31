@@ -7,6 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QAction, qApp
 
 from src.clientes import Cliente
+from src.buscarClientes import buscarClientes
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -110,6 +111,7 @@ class Ui_MainWindow(object):
 
         self.actionSalir.triggered.connect(qApp.quit) # Boton Salir o Ctrl + Q
         self.actionCargar.triggered.connect(self.ventanaClientes) # Boton Salir o Ctrl + Q
+        self.actionListar.triggered.connect(self.buscar) # Boton Listar Clientes
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -117,6 +119,10 @@ class Ui_MainWindow(object):
     def ventanaClientes(self):
         self.buscarCl = Cliente()
         self.buscarCl.exec_()
+
+    def buscar(self):
+        self.buscarCliente = buscarClientes()
+        self.buscarCliente.exec_()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -137,4 +143,3 @@ class Ui_MainWindow(object):
         self.actionListarMascotas.setText(_translate("MainWindow", "Listar"))
         self.actionCargarTurnos.setText(_translate("MainWindow", "Cargar"))
         self.actionListarTurnos.setText(_translate("MainWindow", "Listar"))
-

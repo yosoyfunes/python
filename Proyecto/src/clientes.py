@@ -7,9 +7,9 @@ from src.buscarClientes import buscarClientes
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from src.base import Clientes, Base, nombre_db
+from src.base import Clientes, Base, nombre_db, engine
 
-engine = create_engine('sqlite:///' + nombre_db)
+# engine = create_engine('sqlite:///' + nombre_db)
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -19,6 +19,8 @@ class Cliente(QDialog):
         QDialog.__init__(self)
         uic.loadUi("layout/validacion.ui", self)
         self.iniciar()
+        self.p = re.compile('^[a-zA-Z\sáéíóúàèìòùäëïöüñ]+$')
+        self.pm = re.compile('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
 
     def limpiarFormulario(self):
         self.nombre.setText(None)
@@ -72,29 +74,53 @@ class Cliente(QDialog):
 
     def validar_nombre(self):
         nombre = self.nombre.text()
-        validar = re.match('^[a-z\sáéíóúàèìòùäëïöüñ]+$', nombre, re.I)
-        if nombre == "":
-            self.nombre.setStyleSheet("border: 1px solid yellow;")
-            return False
-        elif not validar:
-            self.nombre.setStyleSheet("border: 1px solid red;")
-            return False
-        else:
+        m = self.p.match(nombre)
+
+        if m:
             self.nombre.setStyleSheet("border: 1px solid green;")
             return True
+        elif nombre == "":
+            self.nombre.setStyleSheet("border: 1px solid yellow;")
+            return False
+        else:
+            self.nombre.setStyleSheet("border: 1px solid red;")
+            return False
+
+        # validar = re.match('^[a-z\sáéíóúàèìòùäëïöüñ]+$', nombre, re.I)
+        # if nombre == "":
+        #     self.nombre.setStyleSheet("border: 1px solid yellow;")
+        #     return False
+        # elif not validar:
+        #     self.nombre.setStyleSheet("border: 1px solid red;")
+        #     return False
+        # else:
+        #     self.nombre.setStyleSheet("border: 1px solid green;")
+        #     return True
 
     def validar_email(self):
         email = self.email.text()
-        validar = re.match('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', email, re.I)
-        if email == "":
-            self.email.setStyleSheet("border: 1px solid yellow;")
-            return False
-        elif not validar:
-            self.email.setStyleSheet("border: 1px solid red;")
-            return False
-        else:
+        mn = self.pm.match(email)
+
+        if mn:
             self.email.setStyleSheet("border: 1px solid green;")
             return True
+        elif email == "":
+            self.email.setStyleSheet("border: 1px solid yellow;")
+            return False
+        else:
+            self.email.setStyleSheet("border: 1px solid red;")
+            return False
+
+        # validar = re.match('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', email, re.I)
+        # if email == "":
+        #     self.email.setStyleSheet("border: 1px solid yellow;")
+        #     return False
+        # elif not validar:
+        #     self.email.setStyleSheet("border: 1px solid red;")
+        #     return False
+        # else:
+        #     self.email.setStyleSheet("border: 1px solid green;")
+        #     return True
 
     def validar_formulario(self, parent=None):
         if self.validar_nombre() and self.validar_email():
